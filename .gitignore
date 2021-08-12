@@ -30,3 +30,11 @@ yarn-error.log*
 
 # python
 __pycache__
+
+# django
+*.log
+*.pot
+*.pyc
+local_settings.py
+
+db.sqlite3
