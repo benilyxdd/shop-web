@@ -24,3 +24,9 @@ yarn-error.log*
 
 # virtual env
 /dj
+
+# secret
+/backend/secrets_settings.py
+
+# python
+__pycache__
