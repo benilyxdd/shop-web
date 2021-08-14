@@ -4,7 +4,7 @@ import SearchBar from './SearchBar/SearchBar'
 const App = () => {
     return (
         <div>
-            <SearchBar />
+            <SearchBar ProductList = {['item1', 'item2', 'item3']}/>
         </div>
     )
 }
