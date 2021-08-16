@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import SearchBar from './SearchBar/SearchBar'
-import ProductBlock from './ProductBlock/ProductBlock'
+import ProductBar from './ProductBar/ProductBar'
 
 const App = () => {
     const [Products, SetProducts] = React.useState([])
@@ -17,6 +17,7 @@ const App = () => {
     }, []) 
     return (
         <div>
+            <ProductBar />
             <SearchBar ProductList={Products} />
         </div>
     )
