@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar/SearchBar";
 import ProductBar from './ProductBar/ProductBar'
 
 const App = () => {
-	const [Products, SetProducts] = React.useState([]);
+	const [products, setProducts] = React.useState([]);
 
 	const fetchData = async () => {
 		const response = await fetch("https://fakestoreapi.com/products");
@@ -16,14 +16,14 @@ const App = () => {
 			};
 			return item;
 		});
-		SetProducts(products);
+		setProducts(products);
 	};
 
 	useEffect(() => fetchData(), []);
 	return (
 		<div>
             <ProductBar />
-			<SearchBar ProductList={Products} />
+			<SearchBar ProductList={products} />
 		</div>
 	);
 };

@@ -3,19 +3,19 @@ import "./SearchBar.css";
 import ProductBlock from '../ProductBlock/ProductBlock'
 
 const SearchBar = (props) => {
-    const [SearchValue, SetSearchValue] = useState("");
+    const [searchValue, setSearchValue] = useState("");
 
     const HandleSearchValueChange = (event) => {
-        SetSearchValue(event.target.value);
+        setSearchValue(event.target.value);
     };
 
     const ResetSearchValue = () => {
-        SetSearchValue("");
+        setSearchValue("");
     };
 
     let FilteredProducts = props.ProductList.filter((product) => {
         const name = product.name
-        return name.includes(SearchValue);
+        return name.includes(searchValue);
     });
 
     console.log(props.ProductList)
@@ -24,7 +24,7 @@ const SearchBar = (props) => {
         <div>
             <input
                 type="text"
-                value={SearchValue}
+                value={searchValue}
                 onChange={HandleSearchValueChange}
             />
             <button onClick={ResetSearchValue}>Clear</button>

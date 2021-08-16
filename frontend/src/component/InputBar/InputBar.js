@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import "./InputBar.css";
 
 const InputBar = (props) => {
-	const [InputValue, SetInputValue] = useState(props.InputValue);
+	const [inputValue, setInputValue] = useState(props.InputValue);
 
 	const HandleInputValueChange = (event) => {
-		SetInputValue(event.target.value);
+		setInputValue(event.target.value);
 	};
 
 	return (
 		<div>
 			<input
 				type="text"
-				value={InputValue}
+				value={inputValue}
 				onChange={HandleInputValueChange}
 			/>
 		</div>
