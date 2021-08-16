@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import SearchBar from "./SearchBar/SearchBar";
-import ProductBar from './ProductBar/ProductBar'
+import ProductBar from "./ProductBar/ProductBar";
 
 const App = () => {
 	const [products, setProducts] = React.useState([]);
@@ -22,7 +22,7 @@ const App = () => {
 	useEffect(() => fetchData(), []);
 	return (
 		<div>
-            <ProductBar />
+			<ProductBar />
 			<SearchBar ProductList={products} />
 		</div>
 	);
