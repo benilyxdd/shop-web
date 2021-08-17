@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchBar from "./SearchBar/SearchBar";
 import ProductBar from "./ProductBar/ProductBar";
 import ProductDetail from './ProductDetail/ProductDetail'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NavBar from './NavBar/NavBar'
+import About from './About/About'
+import './App.css'
 
 const App = () => {
 	const [products, setProducts] = React.useState([]);
@@ -23,14 +26,18 @@ const App = () => {
 
 	useEffect(() => fetchData(), []);
 	return (
-		<div>
-			<ProductBar />
+		<div className = "App">
             <Router>
+            <NavBar />
                 <Switch>
-                    <Route path = '/ProductDetail' component = {ProductDetail}>
+                    <Route path = '/productDetail' component = {ProductDetail}>
                         <ProductDetail />
                     </Route>
+                    <Route path='/about' component={SearchBar}>
+                        <About />
+                    </Route>
                     <Route path='/' component={SearchBar}>
+			            <ProductBar />
                         <SearchBar ProductList={products} />
                     </Route>
                 </Switch>
