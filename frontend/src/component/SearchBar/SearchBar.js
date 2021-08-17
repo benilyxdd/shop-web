@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProductBlock from "../ProductBlock/ProductBlock";
 import ProductDetail from '../ProductDetail/ProductDetail'
+import ProductBar from '../ProductBar/ProductBar'
 import "./SearchBar.css";
 
 const SearchBar = (props) => {
@@ -23,6 +24,7 @@ const SearchBar = (props) => {
 
 	return (
 		<div>
+			<ProductBar />
 			<input
 				type="text"
 				value={searchValue}
