@@ -6,6 +6,7 @@ from .serializers import ProductSerializers
 
 # Create your views here.
 
+
 def product_list(request):
     if request.method == "GET":
         products = Product.objects.all()
