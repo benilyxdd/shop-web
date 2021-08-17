@@ -3,7 +3,7 @@ from .models import Products
 
 class ProductsSerializers(serializers.Serializer):
     name = serializers.CharField(max_length=255)
-    description = serializers.TextField()
+    description = serializers.CharField()
     cost = serializers.DecimalField(max_digits=6, decimal_places=1)
     date_created = serializers.DateTimeField()
     date_modified = serializers.DateTimeField()
