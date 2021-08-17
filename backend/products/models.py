@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class Products(models.Model):
+class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     cost = models.DecimalField(max_digits=6, decimal_places=1)

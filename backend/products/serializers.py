@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Products
+from .models import Product
 
-class ProductsSerializers(serializers.Serializer):
+class ProductSerializers(serializers.Serializer):
     name = serializers.CharField(max_length=255)
     description = serializers.CharField()
     cost = serializers.DecimalField(max_digits=6, decimal_places=1)
@@ -9,7 +9,7 @@ class ProductsSerializers(serializers.Serializer):
     date_modified = serializers.DateTimeField()
 
     def create(self, validated_data):
-        return Products.objects.create(validated_data)
+        return Product.objects.create(validated_data)
 
     def update(self, instance, validated_data):
         instance.name = validated_data.get('name', instance.name)
