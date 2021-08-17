@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./SearchBar.css";
 import ProductBlock from "../ProductBlock/ProductBlock";
+import ProductDetail from '../ProductDetail/ProductDetail'
+import "./SearchBar.css";
 
 const SearchBar = (props) => {
 	const [searchValue, setSearchValue] = useState("");
@@ -28,11 +29,11 @@ const SearchBar = (props) => {
 				onChange={HandleSearchValueChange}
 			/>
 			<button onClick={ResetSearchValue}>Clear</button>
-			<ul>
-				{FilteredProducts.map((product) => {
-					return <ProductBlock Product={product} />;
-				})}
-			</ul>
+				<ul>
+					{FilteredProducts.map((product) => {
+						return <ProductBlock Product={product} />;
+					})}
+				</ul>
 		</div>
 	);
 };

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import ProductBar from "./ProductBar/ProductBar";
+import ProductDetail from './ProductDetail/ProductDetail'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
 	const [products, setProducts] = React.useState([]);
@@ -23,7 +25,16 @@ const App = () => {
 	return (
 		<div>
 			<ProductBar />
-			<SearchBar ProductList={products} />
+            <Router>
+                <Switch>
+                    <Route path = '/ProductDetail' component = {ProductDetail}>
+                        <ProductDetail />
+                    </Route>
+                    <Route path='/' component={SearchBar}>
+                        <SearchBar ProductList={products} />
+                    </Route>
+                </Switch>
+            </Router>
 		</div>
 	);
 };
