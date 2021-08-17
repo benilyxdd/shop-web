@@ -1,44 +1,29 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import SearchBar from "./SearchBar/SearchBar";
-import ProductBar from "./ProductBar/ProductBar";
 import ProductDetail from "./ProductDetail/ProductDetail";
 import NavBar from "./NavBar/NavBar";
 import About from "./About/About";
 import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+
+import { fetchData } from "./store/Actions/initial";
 
 const App = () => {
-    const [products, setProducts] = React.useState([]);
+    const dispatch = useDispatch();
+    const products = useSelector((state) => state.initialize.products);
 
-    const fetchData = async () => {
-        const response = await fetch("https://fakestoreapi.com/products");
-        const responseData = await response.json();
-        const products = await responseData.map((product) => {
-            const item = {
-                name: product.title,
-                price: product.price,
-                image: product.image,
-            };
-            return item;
-        });
-        setProducts(products);
-    };
-
-    useEffect(() => fetchData(), []);
+    useEffect(() => dispatch(fetchData()), []);
     return (
         <div className="App">
-            <Router>
-                <NavBar />
-                <Switch>
-                    <Route path="/product/:id" component={ProductDetail}>
-                        <ProductDetail />
-                    </Route>
-                    <Route path="/about" component={About} />
-                    <Route path="/">
-                        <SearchBar ProductList={products} />
-                    </Route>
-                </Switch>
-            </Router>
+            <NavBar />
+            <Switch>
+                <Route path="/products/:id" render={() => <ProductDetail />} />
+                <Route path="/about" component={About} />
+                <Route path="/">
+                    <SearchBar ProductList={products} />
+                </Route>
+            </Switch>
         </div>
     );
 };

@@ -12,7 +12,7 @@ const ProductBlock = (props) => {
 	const Price = () => {
 		return <h3>$ {prop.price}</h3>;
 	};
-	console.log(prop);
+	// console.log(prop);
 	return (
 		<div className="product-display">
 			<Image />
