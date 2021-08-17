@@ -21,3 +21,27 @@ def product_list(request):
             serializer.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
+
+
+def product_detail(request, primary_key):
+    try:
+        product = Product.objects.get(pk=primary_key)
+    except Product.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == "GET":
+        serializer = ProductSerializers(product)
+        return JsonResponse(serializer.data)
+
+    elif request.method == "POST":
+        data = JSONParser().parse(request)
+        serializer = ProductSerializers(product, data=data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse(serializer.errors, status=400)
+
+    elif request.method == "DELETE":
+        product.delete()
+        return HttpResponse(status=204)
