@@ -1,11 +1,10 @@
 import { FETCH_DATA } from "../Actions/initial";
 
-const empty = {
+const initState = {
 	products: [],
-	cart: [],
 };
 
-const initalize = (state = empty, action) => {
+const initialReducer = (state = initState, action) => {
 	switch (action.type) {
 		case FETCH_DATA:
 			return { ...state, products: action.data };
@@ -14,4 +13,4 @@ const initalize = (state = empty, action) => {
 	}
 };
 
-export default initalize;
+export default initialReducer;

@@ -11,7 +11,7 @@ import { fetchData } from "../store/Actions/initial";
 
 const App = () => {
 	const dispatch = useDispatch();
-	const products = useSelector((state) => state.initialize.products);
+	const products = useSelector((state) => state.initial.products);
 
 	useEffect(() => {
 		dispatch(fetchData());
