@@ -6,6 +6,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework import mixins, generics
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 from .models import Product
 from .serializers import ProductSerializers
 
@@ -16,6 +18,8 @@ class ProductGenericAPIView(generics.GenericAPIView, mixins.ListModelMixin, mixi
     serializer_class = ProductSerializers
     queryset = Product.objects.all()
     lookup_field = 'id'
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, id=None):
         if id:
@@ -27,7 +31,7 @@ class ProductGenericAPIView(generics.GenericAPIView, mixins.ListModelMixin, mixi
 
     def put(self, request, id=None):
         return self.update(request, id)
-    
+
     def delete(self, request, id):
         return self.destroy(request, id)
 
