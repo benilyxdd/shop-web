@@ -1,0 +1,11 @@
+/* global varible for all css files */
+:root {
+	--color-primary: blue;
+	--color-secondary: red;
+}
+
+/* default settings for all elements */
+* {
+	margin: 0;
+	padding: 0;
+}
