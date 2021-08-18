@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
-from .models import Product
-from .serializers import ProductSerializers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
+from .models import Product
+from .serializers import ProductSerializers
 
 # Create your views here.
 
