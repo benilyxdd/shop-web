@@ -23,7 +23,7 @@ const App = () => {
 			<Switch>
 				<Route path="/products/:id" render={() => <ProductDetail />} />
 				<Route path="/about" component={About} />
-				<Route path="/">
+				<Route path="/" exact>
 					<SearchBar ProductList={products} />
 				</Route>
 			</Switch>

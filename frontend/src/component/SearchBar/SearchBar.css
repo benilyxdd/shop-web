@@ -1,1 +1,7 @@
 @import url("../../../src/root.css");
+
+.products-section {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}

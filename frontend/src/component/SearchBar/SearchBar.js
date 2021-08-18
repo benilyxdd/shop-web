@@ -32,7 +32,7 @@ const SearchBar = (props) => {
 				onChange={HandleSearchValueChange}
 			/>
 			<button onClick={ResetSearchValue}>Clear</button>
-			<ul>
+			<div className="products-section">
 				{FilteredProducts.map((product) => {
 					return (
 						<Link to={`/products/${product.id}`}>
@@ -40,7 +40,7 @@ const SearchBar = (props) => {
 						</Link>
 					);
 				})}
-			</ul>
+			</div>
 		</div>
 	);
 };
