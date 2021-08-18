@@ -7,25 +7,27 @@ import About from "./About/About";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchData } from "./store/Actions/initial";
+import { fetchData } from "../store/Actions/initial";
 
 const App = () => {
-    const dispatch = useDispatch();
-    const products = useSelector((state) => state.initialize.products);
+	const dispatch = useDispatch();
+	const products = useSelector((state) => state.initialize.products);
 
-    useEffect(() => dispatch(fetchData()), []);
-    return (
-        <div className="App">
-            <NavBar />
-            <Switch>
-                <Route path="/products/:id" render={() => <ProductDetail />} />
-                <Route path="/about" component={About} />
-                <Route path="/">
-                    <SearchBar ProductList={products} />
-                </Route>
-            </Switch>
-        </div>
-    );
+	useEffect(() => {
+		dispatch(fetchData());
+	}, []);
+	return (
+		<div className="App">
+			<NavBar />
+			<Switch>
+				<Route path="/products/:id" render={() => <ProductDetail />} />
+				<Route path="/about" component={About} />
+				<Route path="/">
+					<SearchBar ProductList={products} />
+				</Route>
+			</Switch>
+		</div>
+	);
 };
 
 export default App;

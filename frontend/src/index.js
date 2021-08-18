@@ -8,16 +8,16 @@ import initialize from "./component/store/Reducers/initial";
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
-    initialize: initialize,
+	initialize: initialize,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Router>
-            <App />
-        </Router>
-    </Provider>,
-    document.getElementById("root")
+	<Provider store={store}>
+		<Router>
+			<App />
+		</Router>
+	</Provider>,
+	document.getElementById("root")
 );
