@@ -6,7 +6,7 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import { Provider } from "react-redux";
 
 import App from "./component/App";
-import initial from "./component/store/Reducers/initial";
+import initial from "./store/Reducers/initial";
 
 const rootReducer = combineReducers({
 	initial: initial,
