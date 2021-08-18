@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import "./App.css";
 import SearchBar from "./SearchBar/SearchBar";
 import ProductDetail from "./ProductDetail/ProductDetail";
 import NavBar from "./NavBar/NavBar";
 import About from "./About/About";
-import "./App.css";
-import { useDispatch, useSelector } from "react-redux";
-
 import { fetchData } from "../store/Actions/initial";
+
 
 const App = () => {
 	const dispatch = useDispatch();

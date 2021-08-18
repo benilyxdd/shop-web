@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import "./SearchBar.css";
 import ProductBlock from "../ProductBlock/ProductBlock";
 import ProductBar from "../ProductBar/ProductBar";
-import { Link } from "react-router-dom";
-import "./SearchBar.css";
 
 const SearchBar = (props) => {
 	const [searchValue, setSearchValue] = useState("");
