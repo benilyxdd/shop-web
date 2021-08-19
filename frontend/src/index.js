@@ -7,18 +7,20 @@ import { Provider } from "react-redux";
 
 import App from "./component/App";
 import initial from "./store/Reducers/initial";
+import CartOperation from "./store/Reducers/CartOperation";
 
 const rootReducer = combineReducers({
-	initial: initial,
+    initial: initial,
+    CartOperation: CartOperation,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-	<Provider store={store}>
-		<Router>
-			<App />
-		</Router>
-	</Provider>,
-	document.getElementById("root")
+    <Provider store={store}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>,
+    document.getElementById("root")
 );
