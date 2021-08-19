@@ -20,13 +20,13 @@ const Cart = () => {
                         <Link to={`/products/${product.id}`}>
                             <ProductBlock Product={product} />
                         </Link>
-                        {/* <button
+                        <button
                             onClick={() => {
                                 dispatch(cartAdd(product.id));
                             }}
                         >
                             Add
-                        </button> */}
+                        </button>
                     </div>
                 );
             })}
