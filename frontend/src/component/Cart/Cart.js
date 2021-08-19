@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./Cart.css";
 import ProductBlock from "../ProductBlock/ProductBlock";
+import { cartRemove } from "../../store/Actions/CartOperation";
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -22,10 +23,10 @@ const Cart = () => {
                         </Link>
                         <button
                             onClick={() => {
-                                dispatch(cartAdd(product.id));
+                                dispatch(cartRemove(product));
                             }}
                         >
-                            Add
+                            Remove
                         </button>
                     </div>
                 );
