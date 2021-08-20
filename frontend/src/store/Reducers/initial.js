@@ -2,6 +2,7 @@ import { FETCH_DATA } from "../Actions/initial";
 
 const initState = {
 	products: [],
+	filteredProducts: []
 };
 
 const initialReducer = (state = initState, action) => {

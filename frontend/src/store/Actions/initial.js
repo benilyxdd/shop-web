@@ -1,4 +1,5 @@
 export const FETCH_DATA = "FETCH_DATA";
+export const FILTER = "FILTER";
 
 export const fetchData = () => {
     return async (dispatch) => {
@@ -15,4 +16,11 @@ export const fetchData = () => {
         });
         dispatch({ type: FETCH_DATA, data: products });
     };
+};
+
+export const FilteredProducts = (products, keyWord) => {
+    const filteredList = products.filter((items) => {
+        return items.name.included(keyWord);
+    });
+    return { type: FILTER, data: filteredList };
 };

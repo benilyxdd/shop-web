@@ -24,12 +24,28 @@ const SearchBar = (props) => {
         const name = product.name;
         return name.includes(searchValue);
     });
+    
+    const handleClick = (e) => {
+        
+    };
 
     // console.log(props.ProductList);
 
     return (
         <div>
-            <ProductBar />
+            <div
+                className="ProductList"
+                onClick={(e) => {
+                    handleClick(e);
+                }}
+            >
+                <button value="水晶手串">水晶手串</button>
+                <button value="水晶簇">水晶簇</button>
+                <button value="水晶球">水晶球</button>
+                <button value="水晶柱">水晶柱</button>
+                <button value="吊墜">吊墜</button>
+                <button value="原石">原石</button>
+            </div>
             <input
                 type="text"
                 value={searchValue}
