@@ -1,44 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./SearchBar.css";
 import ProductBlock from "../ProductBlock/ProductBlock";
-import ProductBar from "../ProductBar/ProductBar";
 import { cartAdd } from "../../store/Actions/CartOperation";
+import { filter, searchValueChange } from "../../store/Actions/initial";
 
 const SearchBar = (props) => {
     const dispatch = useDispatch();
 
-    const [searchValue, setSearchValue] = useState("");
-
-    const HandleSearchValueChange = (event) => {
-        setSearchValue(event.target.value);
-    };
-
-    const ResetSearchValue = () => {
-        setSearchValue("");
-    };
-
-    let FilteredProducts = props.ProductList.filter((product) => {
-        const name = product.name;
-        return name.includes(searchValue);
-    });
-    
-    const handleClick = (e) => {
-        
-    };
-
-    // console.log(props.ProductList);
+    const products = props.data;
+    const searchValue = useSelector((state) => state.initial.searchValue);
+    const filteredProducts = useSelector(
+        (state) => state.initial.filteredProducts
+    );
 
     return (
         <div>
-            <div
-                className="ProductList"
-                onClick={(e) => {
-                    handleClick(e);
-                }}
-            >
+            <div className="ProductList">
                 <button value="水晶手串">水晶手串</button>
                 <button value="水晶簇">水晶簇</button>
                 <button value="水晶球">水晶球</button>
@@ -49,13 +29,19 @@ const SearchBar = (props) => {
             <input
                 type="text"
                 value={searchValue}
-                onChange={HandleSearchValueChange}
+                onChange={(event) => {
+                    dispatch(searchValueChange(event.target.value));
+                    dispatch(filter(products, searchValue));
+                }}
             />
-            <button onClick={ResetSearchValue}>Clear</button>
+            <button onClick={() => dispatch(searchValueChange(""))}>
+                Clear
+            </button>
+
             <div className="products-section">
-                {FilteredProducts.map((product) => {
+                {filteredProducts.map((product, index) => {
                     return (
-                        <div>
+                        <div key={index}>
                             <Link to={`/products/${product.id}`}>
                                 <ProductBlock Product={product} />
                             </Link>

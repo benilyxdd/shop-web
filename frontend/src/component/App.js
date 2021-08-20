@@ -24,7 +24,7 @@ const App = () => {
                 <Route path="/products/:id" render={() => <ProductDetail />} />
                 <Route path="/about" component={About} />
                 <Route path="/" exact>
-                    <SearchBar ProductList={products} />
+                    <SearchBar data={ products}/>
                 </Route>
             </Switch>
             <Cart />

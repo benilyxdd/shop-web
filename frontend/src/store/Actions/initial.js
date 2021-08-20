@@ -1,5 +1,6 @@
 export const FETCH_DATA = "FETCH_DATA";
 export const FILTER = "FILTER";
+export const SEARCH_VALUE_CHANGE = "SEARCH_VALUE_CHANGE"
 
 export const fetchData = () => {
     return async (dispatch) => {
@@ -18,9 +19,13 @@ export const fetchData = () => {
     };
 };
 
-export const FilteredProducts = (products, keyWord) => {
-    const filteredList = products.filter((items) => {
-        return items.name.included(keyWord);
+export const filter = (products, keyWord) => {
+    const filteredList = products.filter((item) => {
+        return item.name.includes(keyWord);
     });
     return { type: FILTER, data: filteredList };
 };
+
+export const searchValueChange = (input) => {
+    return { type: SEARCH_VALUE_CHANGE, data: input };
+}
