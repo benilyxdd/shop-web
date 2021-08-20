@@ -13,8 +13,10 @@ const ProductDetail = (props) => {
         id - 1
     ];
 
+    console.log(selectedProduct)
+
     const handleAdd = () => {
-        dispatch(cartAdd(id));
+        dispatch(cartAdd(selectedProduct));
     };
 
     return (
