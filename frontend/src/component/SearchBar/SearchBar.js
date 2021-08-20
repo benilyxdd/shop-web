@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./SearchBar.css";
 import ProductBlock from "../ProductBlock/ProductBlock";
 import { cartAdd } from "../../store/Actions/CartOperation";
-import { filter, searchValueChange } from "../../store/Actions/initial";
+import { filter, searchValueChange, resetSearch } from "../../store/Actions/initial";
 
 const SearchBar = (props) => {
     const dispatch = useDispatch();
@@ -34,9 +34,7 @@ const SearchBar = (props) => {
                     dispatch(filter(products, searchValue));
                 }}
             />
-            <button onClick={() => dispatch(searchValueChange(""))}>
-                Clear
-            </button>
+            <button onClick={() => dispatch(resetSearch())}>Clear</button>
 
             <div className="products-section">
                 {filteredProducts.map((product, index) => {
