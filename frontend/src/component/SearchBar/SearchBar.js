@@ -23,7 +23,7 @@ const SearchBar = (props) => {
 
     return (
         <div>
-            <div className="ProductList" onClick = {(e) => dispatch(filterTag(filteredProducts, e.target.value))}>
+            <div className="ProductList" onClick = {(e) => dispatch(filterTag(filteredProducts, tagValue, e.target.value))}>
                 <button value="水晶手串">水晶手串</button>
                 <button value="水晶簇">水晶簇</button>
                 <button value="水晶球">水晶球</button>
