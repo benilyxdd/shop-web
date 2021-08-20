@@ -2,6 +2,8 @@ export const FETCH_DATA = "FETCH_DATA";
 export const FILTER = "FILTER";
 export const SEARCH_VALUE_CHANGE = "SEARCH_VALUE_CHANGE"
 export const RESET_SEARCH = "RESET_SEARCH"
+export const RESET_TAG = "RESET_TAG"
+export const FILTER_TAG = 'FILTER_TAG'
 
 export const fetchData = () => {
     return async (dispatch) => {
@@ -33,4 +35,15 @@ export const searchValueChange = (input) => {
 
 export const resetSearch = () => {
     return { type: RESET_SEARCH };
+}
+
+export const resetTag = () => {
+    return { type: RESET_TAG };
+}
+
+export const filterTag = (products, choice) => {
+    const data = products.filter((product) => {
+        product.tag === choice
+    })
+    return { type: FILTER_TAG, choice: choice, data: data};
 }

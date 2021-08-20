@@ -9,6 +9,7 @@ const initState = {
     products: [],
     filteredProducts: [],
     searchValue: "",
+    tag: "",
 };
 
 const initialReducer = (state = initState, action) => {
@@ -28,6 +29,12 @@ const initialReducer = (state = initState, action) => {
                 ...state,
                 filteredProducts: state.products,
                 searchValue: "",
+            };
+        case FILTER_TAG:
+            return {
+                ...state,
+                tag: action.choice,
+                filteredProducts: action.data,
             };
         default:
             return state;
