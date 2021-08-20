@@ -44,7 +44,7 @@ const SearchBar = (props) => {
             <div className="products-section">
                 {filteredProducts.map((product, index) => {
                     return (
-                        <div key={index}>
+                        <div key={index} className="product-item">
                             <Link to={`/products/${product.id}`}>
                                 <ProductBlock Product={product} />
                             </Link>
