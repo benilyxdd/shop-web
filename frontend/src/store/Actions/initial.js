@@ -41,9 +41,15 @@ export const resetTag = () => {
     return { type: RESET_TAG };
 }
 
-export const filterTag = (products, choice) => {
-    const data = products.filter((product) => {
-        product.tag === choice
+export const filterTag = (products, tagValue, choice) => {
+    tagValue = [ ...tagValue, choice];
+    let newList = []
+    tagValue.map((tag) => {
+        const temp = products.filter((product) => {
+            return product.tag === tag;
+        });
+        newList = [...newList , ...temp ]
     })
-    return { type: FILTER_TAG, choice: choice, data: data};
+    
+    return { type: FILTER_TAG, choice: tagValue, data: newList};
 }

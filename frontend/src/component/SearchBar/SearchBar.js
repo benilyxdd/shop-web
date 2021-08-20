@@ -1,24 +1,29 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./SearchBar.css";
 import ProductBlock from "../ProductBlock/ProductBlock";
 import { cartAdd } from "../../store/Actions/CartOperation";
-import { filter, searchValueChange, resetSearch } from "../../store/Actions/initial";
+import { filter, searchValueChange, resetSearch , resetTag , filterTag } from "../../store/Actions/initial";
 
 const SearchBar = (props) => {
     const dispatch = useDispatch();
 
     const products = props.data;
     const searchValue = useSelector((state) => state.initial.searchValue);
+    const tagValue = useSelector((state) => state.initial.tag);
     const filteredProducts = useSelector(
         (state) => state.initial.filteredProducts
     );
+    const resetAll = () => {
+            dispatch(resetTag())
+            dispatch(resetSearch())
+        }
 
     return (
         <div>
-            <div className="ProductList">
+            <div className="ProductList" onClick = {(e) => dispatch(filterTag(filteredProducts, e.target.value))}>
                 <button value="水晶手串">水晶手串</button>
                 <button value="水晶簇">水晶簇</button>
                 <button value="水晶球">水晶球</button>
@@ -34,7 +39,7 @@ const SearchBar = (props) => {
                     dispatch(filter(products, searchValue));
                 }}
             />
-            <button onClick={() => dispatch(resetSearch())}>Clear</button>
+            <button onClick={() => resetAll()}>Clear</button>
 
             <div className="products-section">
                 {filteredProducts.map((product, index) => {

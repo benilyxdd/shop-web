@@ -3,13 +3,14 @@ import {
     FILTER,
     SEARCH_VALUE_CHANGE,
     RESET_SEARCH,
+    FILTER_TAG,
 } from "../Actions/initial";
 
 const initState = {
     products: [],
     filteredProducts: [],
     searchValue: "",
-    tag: "",
+    tag: [],
 };
 
 const initialReducer = (state = initState, action) => {
