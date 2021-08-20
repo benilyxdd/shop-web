@@ -1,14 +1,23 @@
 @import url("../../../src/root.css");
 
-nav {
-	align-items: center;
-	background: cadetblue;
-	justify-content: space-around;
+.navbar {
+	height: 10vh;
+	display: flex;
+	background-color: var(--color-primary);
 }
 
-.nav-link {
-	width: 50%;
+.navbar-list {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: flex-start;
 	list-style: none;
+}
+
+.list-item {
+	margin-left: 5%;
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--color-secondary);
 }
