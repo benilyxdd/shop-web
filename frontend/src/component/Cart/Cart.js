@@ -10,7 +10,6 @@ const Cart = () => {
     const dispatch = useDispatch();
 
     const cartList = useSelector((state) => state.CartOperation.cartList);
-    console.log(cartList);
 
     return (
         <div>
