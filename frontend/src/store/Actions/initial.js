@@ -1,9 +1,9 @@
 export const FETCH_DATA = "FETCH_DATA";
 export const FILTER = "FILTER";
-export const SEARCH_VALUE_CHANGE = "SEARCH_VALUE_CHANGE"
-export const RESET_SEARCH = "RESET_SEARCH"
-export const RESET_TAG = "RESET_TAG"
-export const FILTER_TAG = 'FILTER_TAG'
+export const SEARCH_VALUE_CHANGE = "SEARCH_VALUE_CHANGE";
+export const RESET_SEARCH = "RESET_SEARCH";
+export const RESET_TAG = "RESET_TAG";
+export const FILTER_TAG = "FILTER_TAG";
 
 export const fetchData = () => {
     return async (dispatch) => {
@@ -31,25 +31,40 @@ export const filter = (products, keyWord) => {
 
 export const searchValueChange = (input) => {
     return { type: SEARCH_VALUE_CHANGE, data: input };
-}
+};
 
 export const resetSearch = () => {
     return { type: RESET_SEARCH };
-}
+};
 
 export const resetTag = () => {
     return { type: RESET_TAG };
-}
+};
 
-export const filterTag = (products, tagValue, choice) => {
-    tagValue = [ ...tagValue, choice];
-    let newList = []
-    tagValue.map((tag) => {
-        const temp = products.filter((product) => {
-            return product.tag === tag;
+export const filterTag = (all, products, tagValue, choice) => {
+    if (
+        tagValue.find((item) => {
+            return item == choice;
+        })
+    ) {
+        tagValue = tagValue.filter((item) => {
+            return item !== choice;
         });
-        newList = [...newList , ...temp ]
-    })
-    
-    return { type: FILTER_TAG, choice: tagValue, data: newList};
-}
+    }
+    else {
+        tagValue = [...tagValue, choice];
+    }
+    let newList = [];
+    if (tagValue.length === 0){
+        newList = [...all]
+    }
+    else{
+        tagValue.map((tag) => {
+            const temp = products.filter((product) => {
+                return product.tag === tag;
+            });
+            newList = [...newList, ...temp];
+        });
+    }
+    return { type: FILTER_TAG, choice: tagValue, data: newList };
+};
