@@ -20,8 +20,6 @@ const SearchBar = (props) => {
             dispatch(resetTag())
             dispatch(resetSearch())
         }
-    console.log(tagValue)
-    console.log(filteredProducts)
     return (
         <div>
             <div className="ProductList" onClick = {(e) => dispatch(filterTag(products, filteredProducts, tagValue, e.target.value))}>
