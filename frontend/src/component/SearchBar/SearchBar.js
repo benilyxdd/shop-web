@@ -20,15 +20,94 @@ const SearchBar = (props) => {
             dispatch(resetTag())
             dispatch(resetSearch())
         }
+    
     return (
         <div>
-            <div className="ProductList" onClick = {(e) => dispatch(filterTag(products, filteredProducts, tagValue, e.target.value))}>
-                <button value="水晶手串">水晶手串</button>
-                <button value="水晶簇">水晶簇</button>
-                <button value="水晶球">水晶球</button>
-                <button value="水晶柱">水晶柱</button>
-                <button value="吊墜">吊墜</button>
-                <button value="原石">原石</button>
+            <div
+                className="ProductList"
+                onClick={(e) =>
+                    dispatch(
+                        filterTag(
+                            products,
+                            filteredProducts,
+                            tagValue,
+                            e.target.value
+                        )
+                    )
+                }
+            >
+                <button
+                    value="水晶手串"
+                    className={
+                        tagValue.find((item) => {
+                            return item === "水晶手串";
+                        })
+                            ? "activebtn"
+                            : ""
+                    }
+                >
+                    水晶手串
+                </button>
+                <button
+                    value="水晶簇"
+                    className={
+                        tagValue.find((item) => {
+                            return item === "水晶簇";
+                        })
+                            ? "activebtn"
+                            : ""
+                    }
+                >
+                    水晶簇
+                </button>
+                <button
+                    value="水晶球"
+                    className={
+                        tagValue.find((item) => {
+                            return item === "水晶球";
+                        })
+                            ? "activebtn"
+                            : ""
+                    }
+                >
+                    水晶球
+                </button>
+                <button
+                    value="水晶柱"
+                    className={
+                        tagValue.find((item) => {
+                            return item === "水晶柱";
+                        })
+                            ? "activebtn"
+                            : ""
+                    }
+                >
+                    水晶柱
+                </button>
+                <button
+                    value="吊墜"
+                    className={
+                        tagValue.find((item) => {
+                            return item === "吊墜";
+                        })
+                            ? "activebtn"
+                            : ""
+                    }
+                >
+                    吊墜
+                </button>
+                <button
+                    value="原石"
+                    className={
+                        tagValue.find((item) => {
+                            return item === "原石";
+                        })
+                            ? "activebtn"
+                            : ""
+                    }
+                >
+                    原石
+                </button>
             </div>
             <input
                 type="text"
