@@ -13,7 +13,7 @@ const ProductDetail = (props) => {
         id - 1
     ];
 
-    console.log(selectedProduct)
+    console.log(selectedProduct);
 
     const handleAdd = () => {
         dispatch(cartAdd(selectedProduct));
