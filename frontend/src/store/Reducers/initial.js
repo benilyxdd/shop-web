@@ -30,6 +30,7 @@ const initialReducer = (state = initState, action) => {
                 ...state,
                 filteredProducts: state.products,
                 searchValue: "",
+                tag: [], 
             };
         case FILTER_TAG:
             return {

@@ -118,7 +118,7 @@ const SearchBar = (props) => {
                 }}
             />
             <button onClick={() => resetAll()}>Clear</button>
-
+            
             <div className="products-section">
                 {filteredProducts.map((product, index) => {
                     return (
