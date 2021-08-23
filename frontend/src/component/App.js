@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
 import SearchBar from "./SearchBar/SearchBar";
