@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import { Button } from 'react-bootstrap';
 
 const NavBar = () => {
     return (

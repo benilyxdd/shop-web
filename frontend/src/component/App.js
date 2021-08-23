@@ -9,7 +9,6 @@ import ProductDetail from "./ProductDetail/ProductDetail";
 import NavBar from "./NavBar/NavBar";
 import About from "./About/About";
 import { fetchData } from "../store/Actions/initial";
-import Cart from "./Cart/Cart";
 
 const App = () => {
     const dispatch = useDispatch();
