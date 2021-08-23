@@ -28,7 +28,6 @@ const App = () => {
                     <SearchBar data={products} />
                 </Route>
             </Switch>
-            <Cart />
         </div>
     );
 };
