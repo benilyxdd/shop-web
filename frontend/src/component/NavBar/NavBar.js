@@ -19,6 +19,7 @@ const NavBar = () => {
                 align="end"
                 title="Favourite"
                 id="dropdown-menu-align-end"
+                variant = "warning"
             >
                 <Dropdown.Item>
                     <Cart />

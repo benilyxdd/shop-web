@@ -19,6 +19,8 @@
 
 .activebtn {
 	background-color: wheat;
+	border-radius: 5px;
+	height: 25px;
 }
 
 .ProductList {

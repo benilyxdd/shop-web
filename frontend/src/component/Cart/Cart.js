@@ -13,7 +13,7 @@ const Cart = () => {
 
     return (
         <div>
-            <h1>Favourite:</h1>
+            <h6>Favourite:</h6>
             {cartList.map((product) => {
                 return (
                     <div>
