@@ -8,9 +8,19 @@
 	justify-content: space-evenly;
 }
 
+.products-section button {
+	text-align: center;
+	align-items: center;
+	position:relative;
+	float:right;
+	font-size:25px;
+	border-radius: 20%;
+	background-color: wheat;
+}
+
 .product-item {
 	width: 400px;
-	height: 50vh;
+	height: 52vh;
 	border: 1px solid black;
 	margin: 10px;
 	border-radius: 10px;
