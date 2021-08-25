@@ -9,6 +9,7 @@ import ProductDetail from "./ProductDetail/ProductDetail";
 import NavBar from "./NavBar/NavBar";
 import About from "./About/About";
 import { fetchData } from "../store/Actions/initial";
+import Footer from '../component/Footer/Footer'
 
 const App = () => {
     const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const App = () => {
                     <SearchBar data={products} />
                 </Route>
             </Switch>
+            <Footer />
         </div>
     );
 };
