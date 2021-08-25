@@ -4,10 +4,13 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
 }
 
 .product-item {
 	width: 400px;
+	height: 50vh;
 	border: 1px solid black;
 	margin: 10px;
 	border-radius: 10px;
@@ -16,4 +19,16 @@
 
 .activebtn {
 	background-color: wheat;
+}
+
+.ProductList {
+	margin: auto;
+	display: flex;
+	justify-content:center;
+}
+
+.inputSearchBar {
+	margin: auto;
+	display: flex;
+	justify-content:center;
 }

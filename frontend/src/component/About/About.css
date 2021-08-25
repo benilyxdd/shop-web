@@ -1,1 +1,8 @@
 @import url("../../../src/root.css");
+
+.aboutContent {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin: 20px;
+    text-align: center;
+}

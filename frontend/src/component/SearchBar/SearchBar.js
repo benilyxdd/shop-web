@@ -115,15 +115,17 @@ const SearchBar = (props) => {
                     原石
                 </button>
             </div>
-            <input
-                type="text"
-                value={searchValue}
-                onChange={(event) => {
-                    dispatch(searchValueChange(event.target.value));
-                    dispatch(filter(products, searchValue));
-                }}
-            />
-            <button onClick={() => resetAll()}>Clear</button>
+            <div className="inputSearchBar">
+                <input
+                    type="text"
+                    value={searchValue}
+                    onChange={(event) => {
+                        dispatch(searchValueChange(event.target.value));
+                        dispatch(filter(products, searchValue));
+                    }}
+                />
+                <button onClick={() => resetAll()}>Clear</button>
+            </div>
 
             <div className="products-section">
                 {filteredProducts.map((product, index) => {
