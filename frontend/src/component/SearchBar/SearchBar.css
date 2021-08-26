@@ -15,7 +15,7 @@
 	float:right;
 	font-size:25px;
 	border-radius: 20%;
-	background-color: wheat;
+	background-color: var(--color-primary);
 }
 
 .product-item {
@@ -28,7 +28,7 @@
 }
 
 .activebtn {
-	background-color: wheat;
+	background-color: var(--color-primary);
 	border-radius: 5px;
 	height: 25px;
 }

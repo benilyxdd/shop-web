@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import { Dropdown, DropdownButton } from 'react-bootstrap'
-import Cart from '../Cart/Cart'
+import { Dropdown, DropdownButton } from "react-bootstrap";
+import Cart from "../Cart/Cart";
 
 const NavBar = () => {
     return (
@@ -19,7 +19,7 @@ const NavBar = () => {
                 align="end"
                 title="Favourite"
                 id="dropdown-menu-align-end"
-                variant = "warning"
+                variant="warning"
             >
                 <Dropdown.Item>
                     <Cart />
