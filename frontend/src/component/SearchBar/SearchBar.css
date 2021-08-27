@@ -27,6 +27,10 @@
 	padding: 5px;
 }
 
+.product-item img {
+	max-height: 25vh;
+}
+
 .activebtn {
 	background-color: var(--color-primary);
 	border-radius: 5px;
