@@ -26,7 +26,6 @@ const SearchBar = (props) => {
         dispatch(resetTag());
         dispatch(resetSearch());
     };
-    console.log(products);
 
     return (
         <div>
