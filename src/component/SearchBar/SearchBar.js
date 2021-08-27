@@ -26,9 +26,7 @@ const SearchBar = (props) => {
         dispatch(resetTag());
         dispatch(resetSearch());
     };
-    console.log(searchValue);
-    console.log(tagValue);
-    console.log(filteredProducts);
+    console.log(products);
 
     return (
         <div>
@@ -124,7 +122,7 @@ const SearchBar = (props) => {
                     value={searchValue}
                     onChange={(event) => {
                         dispatch(searchValueChange(event.target.value));
-                        dispatch(filter(products, searchValue));
+                        dispatch(filter(products, event.target.value));
                     }}
                 />
                 <button onClick={() => resetAll()}>Clear</button>
