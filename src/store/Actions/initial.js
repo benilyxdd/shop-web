@@ -7,7 +7,9 @@ export const FILTER_TAG = "FILTER_TAG";
 
 export const fetchData = () => {
     return async (dispatch) => {
-        const response = await fetch("https://fakestoreapi.com/products");
+        const response = await fetch(
+            "https://cors-anywhere.herokuapp.com/https://shop-web-django.herokuapp.com/product/api/"
+        );
         const responseData = await response.json();
         const products = await responseData.map((product) => {
             const item = {
@@ -50,15 +52,13 @@ export const filterTag = (all, products, tagValue, choice) => {
         tagValue = tagValue.filter((item) => {
             return item !== choice;
         });
-    }
-    else {
+    } else {
         tagValue = [...tagValue, choice];
     }
     let newList = [];
-    if (tagValue.length === 0){
-        newList = [...all]
-    }
-    else{
+    if (tagValue.length === 0) {
+        newList = [...all];
+    } else {
         tagValue.map((tag) => {
             const temp = products.filter((product) => {
                 return product.tag === tag;
