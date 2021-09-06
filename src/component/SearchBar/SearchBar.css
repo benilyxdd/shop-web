@@ -25,10 +25,18 @@
 	margin: 10px;
 	border-radius: 10px;
 	padding: 5px;
+	position: relative;
 }
 
 .product-item img {
 	max-height: 25vh;
+}
+
+.product-item button {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	
 }
 
 .activebtn {

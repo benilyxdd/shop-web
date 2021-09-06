@@ -8,7 +8,7 @@ export const FILTER_TAG = "FILTER_TAG";
 export const fetchData = () => {
     return async (dispatch) => {
         const response = await fetch(
-            "https://cors-anywhere.herokuapp.com/https://shop-web-django.herokuapp.com/product/api/"
+            'https://fakestoreapi.com/products'
         );
         const responseData = await response.json();
         const products = await responseData.map((product) => {
